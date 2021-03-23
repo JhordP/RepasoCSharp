@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Practica
 {
-     class Main : Program //Herencia por si acaso no tiene todo lo de la clase principal
-     {
+    class Main : Program //Herencia por si acaso no tiene todo lo de la clase principal
+    {
         readonly int numeroReadonly; //Un valor solo lectura solo puede ser reasignado en el metodo constructor. Permite declarar sin valor
         const int NUMEROCONST = 0; //Si una constante se declara sin valor, lanza error. Lo correcto es usar Uppercase.
-        public Main ()
+        public Main()
         {
             //--Multiple asignacion con VAR
             var (valor1, valor2, valor3) = (1, "2", "tres");
@@ -42,7 +42,7 @@ namespace Practica
             //--Uso de params.
             new RepasoParametros().metodoObjectParams("Jhor", 23, false); //Enviar parametros directos en vez de la coleccion como valor(arriba)
                                                                           //Esto solo mediante el uso de la palabra params en el metodo metodoObjectParams  
-            //--Uso de in.
+                                                                          //--Uso de in.
             int num = Convert.ToInt16(coleccion[0]);
             new RepasoParametros().metodoIn(num); //Utilizando in para que solo pueda tomar este dato
                                                   //Y no pueda ser modificado desde el metodo.
@@ -130,7 +130,33 @@ namespace Practica
 
 
             //--Clase genérica List<>
+            var listas = new RepasoList();
 
+            Console.WriteLine("Escriba la cantidad de elementos a agregar a la lista.");
+            int cantidad = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Escriba los elementos.");
+            for (int i = 0; i < cantidad; i++)
+            {
+                listas.adicionarElem(Console.ReadLine());
+            }
+
+            listas.mostrarLista(listas.listaObject); //Metodo 1, manual para foreach
+            listas.list_forEach(); //Metodo 2, automatico foreach de la clase list
+
+            listas.indexOf();
+
+            //--Herencia de clases
+
+            new RepasoHerencia.MenuHijo("Empresa").getCadena();//Invoca el metodo constructor de la clase hija pero esta hace referencia a la clase padre.
+
+            new RepasoHerencia.MenuPadre().metodoVirtual(); //Esto selecciona el método de la clase padre.
+            new RepasoHerencia.MenuHijo().metodoVirtual(); //Esto selecciona el método sobreescrito del override en la clase hija.
+
+            //--Abstract
+            new RepasoAbstract.Menu("PDHN").getProducto(); //Llama al constructor de Menu
+
+            //--Interfaces
         }
     }
 }

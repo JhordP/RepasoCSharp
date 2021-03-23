@@ -40,15 +40,15 @@ namespace Practica
             private List<Estudiante> estudiantes;
             public Escuela()
             {
-                estudiantes = new List<Estudiante>();           
+                estudiantes = new List<Estudiante>();
             }
 
-            public void agregarEstudiante (Estudiante nuevoEstudiante)
+            public void agregarEstudiante(Estudiante nuevoEstudiante)
             {
                 estudiantes.Add(nuevoEstudiante);
             }
 
-            public bool buscarPorNombre (string nombre)
+            public bool buscarPorNombre(string nombre)
             {
                 bool encontrado = false;
                 int i = 0;

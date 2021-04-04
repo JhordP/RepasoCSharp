@@ -23,7 +23,7 @@ namespace Practica
 
             static int funcionStatic()
             {
-                return 5 + 5;
+                return 5 + 5; //No se que hace esto aqui.
             }
 
             static int arrowFunc() => 3 + 3; //Sintaxis Arrow Functions (expresion lambda) en C#. [tipoMetodo][nombreMetodo()][flecha return]

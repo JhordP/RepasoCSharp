@@ -28,68 +28,68 @@ namespace Practica
 
         private void Switch()
         {
-        /*
-        int input = int.Parse(Console.ReadLine());
+            string[] arreglo = new string[5];
 
-        int[] arreglo = new int[input];
-        */
-        int[] arreglo = new int[4];
-
-        for (int i = 0; i < arreglo.Length; i++)
-        {
-            Console.WriteLine($"Escriba la opcion numero {i + 1}.");
-            arreglo[i] = int.Parse(Console.ReadLine());
-        }
-
-        char Y = 'Y', N = 'N';
-        Console.WriteLine("Usar la estructura switch? Y/N");
-        char swt = char.Parse(Console.ReadLine());
-
-        if ((swt != Y) && (swt != N))
-        {
-            do
+            /*int input = int.Parse(Console.ReadLine()); //Un intento de optimizacion fallido debido a que switch solo toma valores constantes. Se denota abajo.
+            int[] arreglo = new int[input];
+            */
+            for (int i = 0; i < arreglo.Length; i++)
             {
-                Console.WriteLine("Opcion incorrecta. Intente de nuevo.");
-                swt = char.Parse(Console.ReadLine());
+                int num = i + 1;
+            Console.WriteLine($"Escriba la opcion numero {num}.");
+                arreglo[i] = Console.ReadLine();
+            }
 
-            } while ((swt != Y) && (swt != N));
-        }
-        if ((swt == Y) || (swt == N))
-        {
-            if (swt == Y)
+            char Y = 'Y', N = 'N';
+            Console.WriteLine("Usar la estructura switch? Y/N");
+            char swt = char.Parse(Console.ReadLine());
+
+            if ((swt != Y) && (swt != N))
             {
-                Console.WriteLine("Elija el num opción que quiere mostrar del 1 al 5.");
-                int opc = int.Parse(Console.ReadLine());
-
-                switch (opc)
+                do
                 {
-                    case 1:
-                        Console.WriteLine(arreglo[0]);
-                        break;
-                    case 2:
-                        Console.WriteLine(arreglo[1]);
-                        break;
-                    case 3:
-                        Console.WriteLine(arreglo[2]);
-                        break;
-                    case 4:
-                        Console.WriteLine(arreglo[3]);
-                        break;
-                    case 5:
-                        Console.WriteLine(arreglo[4]);
-                        break;
+                    Console.WriteLine("Opcion incorrecta. Intente de nuevo.");
+                    swt = char.Parse(Console.ReadLine());
 
-                    default:
-                        Console.WriteLine("No es un num del 1 al 5");
-                        break;
-                }
-
+                } while ((swt != Y) && (swt != N));
             }
-            else
+            if ((swt == Y) || (swt == N))
             {
-                Console.WriteLine("Bye bye.");
+                if (swt == Y)
+                {
+                    Console.WriteLine("Elija el num opción que quiere mostrar del 1 al 5.");
+                    int opc = int.Parse(Console.ReadLine());
+
+                        //Intenté hacer una optimizacion al codigo pero... Switch solo toma valores constantes, y ahi se cae.
+                    switch (opc)
+                    {
+                        case 1:
+                            Console.WriteLine($"La opcion {opc} es {arreglo[0]}");
+                            break;
+                        case 2:
+                            Console.WriteLine($"La opcion {opc} es {arreglo[1]}");
+                            break;
+                        case 3:
+                            Console.WriteLine($"La opcion {opc} es {arreglo[2]}");
+                            break;
+                        case 4:
+                            Console.WriteLine($"La opcion {opc} es {arreglo[3]}");
+                            break;
+                        case 5:
+                            Console.WriteLine($"La opcion {opc} es {arreglo[4]}");
+                            break;
+
+                        default:
+                            Console.WriteLine("No es un num del 1 al 5");
+                            break;
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Bye bye.");
+                }
             }
-        }
         }
 
 
@@ -102,7 +102,13 @@ namespace Practica
             if ((signo == "+") || (signo == "-") || (signo == "*") || (signo == "/"))
             {
                 Console.WriteLine("Escriba los 2 valores y luego presione enter.");
+
+                //Realizar varias asignaciones en una sola linea, con var.
                 var (a, b, oper) = (double.Parse(Console.ReadLine()), double.Parse(Console.ReadLine()), signo);
+
+                /*Simplificacion de:
+                 * switch(oper) {case"+": double result = a+b}; y demas operaciones.
+                 * Donde result es una variable donde se asigna un valor dependiendo del valor o caso detras del arrow, que es el valor que trae oper. */
                 Double result = oper switch
                 {
                     "+" => Math.Round(a + b, 2),

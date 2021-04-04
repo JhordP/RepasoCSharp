@@ -15,6 +15,8 @@ namespace Practica
 
             int uno = (int)collection[0]; //Convert int con parentesis y ya
             string dos = (string)collection[1]; //Convert string con parentesis y ya
+            //Nota: Esta conversion entre parentesis como que no la entiendo no.
+
             Console.WriteLine($"\n{uno}\n{dos}");
         }
 
@@ -27,7 +29,7 @@ namespace Practica
         }
 
         public void metodoIn (in int valor) //No permite que el parametro sea asignado desde dentro
-        {                                   //(Lo convierte en solo lectura o readonly)
+        {                                   //(Lo convierte en solo lectura o readonly).
             //valor += 50; Este es un ejemplo de codigo que no funciona por la palabra in.
             Console.WriteLine(valor);
         }
@@ -35,13 +37,13 @@ namespace Practica
         public void metodoRef (ref int valor) //Referencia la variable, la vuelve una sola fusionando su valor.
         {
             valor += (50 + 20); /*Al ser la misma variable, toma el valor que tiene en el main
-                                  y se lo suma al 70 con el += gracias a ref. Si no fuera ref
-                                  seria una reasignacion desde cero y se le colocaria 0+70*/
+                                  y se lo suma al 70 con el += gracias a ref.*/
         }
 
-        public void metodoOut(out int valor) //Une ref/in permitiendo que la variable este sin inicializar
+        public int metodoOut(out int valor) //Une ref/in permitiendo que la variable este sin inicializar
         {                                    //No es solo lectura y hace la referencia de fusion.
-            valor = (50 + 20); 
+            valor = (50 + 20);
+            return valor;
         }
 
     }

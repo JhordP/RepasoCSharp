@@ -14,8 +14,8 @@ namespace Practica
             var (valor1, valor2, valor3) = (1, "2", "tres");
 
             //--Instancia clase RepasoSwitch.cs
-            var @switch = new RepasoSwitch();
-            @switch.Menu();
+            var run_switch = new RepasoSwitch();
+            run_switch.Menu();
 
             //--Instancia clase RepasoMetodos.cs
             var met = new RepasoMetodos(1);
@@ -42,9 +42,9 @@ namespace Practica
             //--Uso de params.
             new RepasoParametros().metodoObjectParams("Jhor", 23, false); //Enviar parametros directos en vez de la coleccion como valor(arriba)
                                                                           //Esto solo mediante el uso de la palabra params en el metodo metodoObjectParams  
-                                                                          //--Uso de in.
-            int num = Convert.ToInt16(coleccion[0]);
-            new RepasoParametros().metodoIn(num); //Utilizando in para que solo pueda tomar este dato
+            //--Uso de in.
+            int num = default; //Asigna el valor por defecto de la variable. En este caso 0.
+            new RepasoParametros().metodoIn(in num); //Utilizando in para que solo pueda tomar este dato
                                                   //Y no pueda ser modificado desde el metodo.
 
             //--Uso de Readonly.
@@ -56,8 +56,7 @@ namespace Practica
             //Si se intenta modificar este valor en otro lugar que no sea el constructor, lanza error.
 
             //--Uso de ref.
-
-            //int data; Codigo no funciona porque para usar ref la variable debe ser inicializada
+            //int dataRef; Codigo no funciona porque para usar ref la variable debe ser inicializada
             int dataRef = 60;
             new RepasoParametros().metodoRef(ref dataRef);
             Console.WriteLine(dataRef);
@@ -66,6 +65,8 @@ namespace Practica
             int dataOut; //A diferencia de ref, este permite que la variable no este inicializada
             new RepasoParametros().metodoOut(out dataOut);
             Console.WriteLine(dataOut);
+            //Out se utiliza inicialmente para que el metodo pueda retornar una segunda salida. Es lo que es, una salida.
+            //Asi, si el metodo ya retorna un valor, un valor out o de salida puede utilizarse para un segundo return.
 
             //--Repaso de funciones.
             new RepasoFunciones().getDuplicados();

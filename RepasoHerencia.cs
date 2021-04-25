@@ -15,7 +15,7 @@ namespace Practica
 
             }
 
-            public MenuPadre(string cadena)
+            public MenuPadre(string cadena) //Sobrecarga de metodo constructor.
             {
                 this.cadena = cadena;
             }
@@ -35,7 +35,7 @@ namespace Practica
                 Console.WriteLine("Este método no se hereda por ser privado.");
             }
 
-            protected void metodoProtegido()
+            protected void metodoProtegido() //Este metodo esta hecho para ser mostrado solo por la clase que lo crea, y sus hijos
             {
                 Console.WriteLine("Este metodo si se hereda. Protected esta hecho para eso.");
             }

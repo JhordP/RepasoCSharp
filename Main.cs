@@ -75,8 +75,8 @@ namespace Practica
 
             //Se utilizan sin crear una nueva instancia. Se accede directamente debido a que solo hay 1 existencia.
             RepasoStatic.Conversor.velocidad = 0;
-            RepasoStatic.Conversor.Conversor1();
-            RepasoStatic.Conversor.Conversor1();
+            RepasoStatic.Conversor.Metodo1();
+            RepasoStatic.Conversor.Metodo1();
 
             //--Argumentos opcionales y nombrados
 
@@ -88,6 +88,9 @@ namespace Practica
             //arg.metodo(nombre:"Hector", cantidad: 2); //Parametros nombrados, permiten no obedecer el orden de los parametros en el metodo.
 
             arg.metodo("Juan", cantidad: null); //Para permitir que un valor Int tome un valor Null se le debe colocar "?" al lado del tipo de dato.
+
+            var inst = new RepasoArgumentos();
+            inst.testArg(edad: 20, name: "Juan"); //Probando que se utilizar los argumentos nombrados.
 
             //--Repaso propiedades
             var estudiante = new RepasoPropiedades.Estudiante();
@@ -158,6 +161,40 @@ namespace Practica
             new RepasoAbstract.Menu("PDHN").getProducto(); //Llama al constructor de Menu
 
             //--Interfaces
+            RepasoAbstract.IProductos inter = new RepasoAbstract.Menu("Cadena"); //Se debe utilizar de manera explicita la interfaz y luego asignar la nueva instancia
+            inter.interf();                                                      //al metodo que implementa la interface para poder invocar un metodo con cuerpo (default, publico) de la interface. 
+                                                                                 //NOTA: var no funciona porque toma por defecto la instancia de la clase que implementa.
+
+            //--Polimorfismo
+            //El diablaso, lo logre solo... lo logre, logre de manera sencilla con valores fijos adaptar el codigo para que funcione
+            //SIN ver si quiera la mitad del video del profesor. Ahora lo aplicare a lo real con valores variantes en la clase del repaso.
+
+            //Se agregan los datos.
+            int idProd = 0;
+            string nombreProd = "Chocolate";
+            double precioProd = 34.99;
+
+            //Se crea la instancia del producto, asignandole los valores de las variables a las propiedades.
+            var nom = new RepasoPolimorfismo.Producto();
+            nom.ID = idProd;
+            nom.Nombre = nombreProd;
+            nom.Precio = precioProd;
+
+            //Se crea la instancia del tipo de producto, en este caso Golosina, y se agrega el producto a la lista.
+            RepasoPolimorfismo.Golosinas gol = new RepasoPolimorfismo.Golosinas();
+            gol.addProducto(nom);
+
+            //Se asigna a un var (que se convierte en una lista) la lista retornada del metodo GetProductos, colocandole que el ID a retornar es el 0.
+            var listaProd = gol.GetProductos(); //Esto tenia un 0 cuando lo hice probando.
+
+            //Se muestra cada una de las propiedades del index 0
+            Console.WriteLine($"\n ID:{listaProd[0].ID}\n Nombre:{listaProd[0].Nombre}\n Precio:{listaProd[0].Precio}");
+
+
+            //La aplicacion de verdad con mi codigo, instancia
+            new RepasoPolimorfismo().Menu();
+
+            //La aplicacion hecha por el profesor
         }
     }
 }

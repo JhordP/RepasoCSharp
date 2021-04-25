@@ -10,22 +10,27 @@ namespace Practica
         public class Estudiante
         {
             //--Definiciones***
-            //public int edadPrueba { get; set; } = 10; //Acceso corto y directo. //Get para obtener data, set para colocar la data.
+            public int edadPrueba { get; set; } = 10; //Acceso corto y directo. //Get para obtener data, set para colocar la data.
+            
+            public string NombrePrueba
+            {
+                get { return nombre; } //Si se le quita el set, la variable no puede ser reasignada.
+                set { nombre = value; }  //Cuando otra clase invoca la propiedad asignandole un valor, el valor asignado a la propiedad reasigna tambien la variable usada dentro debido a que hace referencia a esta.   
+            
+            }//El get sirve para traer informacion de la propiedad, por ejemplo asignar el valor de la misma a una variable local.
+             //El set sirve para poder inicializar o reasignar la propiedad, principalmente atraves de una instancia en otra clase.
+            
+            private string nombre; 
+            private string nombre2 = "Oscar";
+            private string apellido = "Polanco"; //Aunque segun lo que indica, este asigna el valor de "nombre", la variable leida es apellido.
+            
+            
 
-            //private string nombre = "Jhord"; //Este valor es ignorado debido a que la propiedad esta retornando la variable apellido.
-            //private string nombre2 = "Oscar";
-            //private string apellido = "Polanco"; //Aunque segun lo que indica, este asigna el valor de "nombre", la variable leida es apellido.
-            //public string NombrePrueba
-            //{
-            //    get { return apellido; } //Si se le quita el set, la variable no puede ser reasignada.
-            //    set { nombre = value; }  //El valor asignado a la propiedad reasigna tambien la variable misma debido a que hace referencia a esta.   
-            //}
-
-            //public string segundoNombre   //Con operador flecha
-            //{
-            //    get => nombre2;
-            //    set => nombre2 = value;
-            //}
+            public string segundoNombre   //Con operador flecha
+            {
+                get => nombre2;
+                set => nombre2 = value;
+            }
 
             //--Inicio Aplicacion de Practica***
             public string Nombre { get; set; }

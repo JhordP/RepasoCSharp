@@ -16,6 +16,7 @@ namespace Practica
             listaObject = new List<object>();
         }
 
+
         public void adicionarElem(object elem) //Nota: Los metodos tambien pueden retornar listas.
         {
             listaObject.Add(elem);
@@ -69,6 +70,8 @@ namespace Practica
         public void listExists()
         {
             listaEnteros.Exists(dato => dato.Equals(5)); //parametro dato para usar lambda a traves del arrow
+
+            listaEnteros.Contains(25); //Pero contains es mas facil, solo que hay que usar un writeline
         }
 
 

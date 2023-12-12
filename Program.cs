@@ -11,7 +11,7 @@ namespace Practica
             //--Poliform
 
             //new RepasoPolimorfismo().Menu();
-            new Program().golosinas();
+            //new Program().golosinas();
         }
 
 

@@ -1,0 +1,5 @@
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.csproj.AssemblyReference.cache
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.AssemblyInfoInputs.cache
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.AssemblyInfo.cs
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.csproj.CoreCompileInputs.cache

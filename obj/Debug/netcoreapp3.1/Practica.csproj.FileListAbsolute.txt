@@ -3,3 +3,12 @@ C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica
 C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.AssemblyInfoInputs.cache
 C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.AssemblyInfo.cs
 C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.csproj.CoreCompileInputs.cache
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\bin\Debug\netcoreapp3.1\Practica.exe
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\bin\Debug\netcoreapp3.1\Practica.deps.json
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\bin\Debug\netcoreapp3.1\Practica.runtimeconfig.json
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\bin\Debug\netcoreapp3.1\Practica.runtimeconfig.dev.json
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\bin\Debug\netcoreapp3.1\Practica.dll
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\bin\Debug\netcoreapp3.1\Practica.pdb
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.dll
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.pdb
+C:\Users\jhord\source\repos\JhordP\RepasoCSharp\obj\Debug\netcoreapp3.1\Practica.genruntimeconfig.cache

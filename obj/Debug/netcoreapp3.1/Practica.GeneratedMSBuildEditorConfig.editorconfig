@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = Practica
 build_property.ProjectDir = C:\Users\jhord\source\repos\JhordP\RepasoCSharp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

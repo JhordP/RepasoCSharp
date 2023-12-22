@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Practica.Update_2023;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using static Practica.Update_2023.Herencia;
 
 namespace Practica
 {
@@ -9,6 +11,12 @@ namespace Practica
         readonly int numeroReadonly; //Un valor solo lectura solo puede ser reasignado en el metodo constructor. Permite declarar sin valor
         const int NUMEROCONST = 0; //Si una constante se declara sin valor, lanza error. Lo correcto es usar Uppercase.
         public Main()
+        {
+            
+        }
+
+        //2021
+        public Main(string data2021)
         {
             //--Multiple asignacion con VAR
             var (valor1, valor2, valor3) = (1, "2", "tres");
@@ -42,10 +50,10 @@ namespace Practica
             //--Uso de params.
             new RepasoParametros().metodoObjectParams("Jhor", 23, false); //Enviar parametros directos en vez de la coleccion como valor(arriba)
                                                                           //Esto solo mediante el uso de la palabra params en el metodo metodoObjectParams  
-            //--Uso de in.
+                                                                          //--Uso de in.
             int num = default; //Asigna el valor por defecto de la variable. En este caso 0.
             new RepasoParametros().metodoIn(in num); //Utilizando in para que solo pueda tomar este dato
-                                                  //Y no pueda ser modificado desde el metodo.
+                                                     //Y no pueda ser modificado desde el metodo.
 
             //--Uso de Readonly.
             numeroReadonly = 10;
@@ -189,12 +197,36 @@ namespace Practica
 
             //Se muestra cada una de las propiedades del index 0
             Console.WriteLine($"\n ID:{listaProd[0].ID}\n Nombre:{listaProd[0].Nombre}\n Precio:{listaProd[0].Precio}");
+            
+        }
 
-
+        public void tiendaGolosinas()
+        {
             //La aplicacion de verdad con mi codigo, instancia
             new RepasoPolimorfismo().Menu();
 
             //La aplicacion hecha por el profesor
+            new RepasoPolimorfismo.Menu_PDHN().golosinas();
+        }
+
+        //---Update 2023
+        //App con DB
+        public void obtenerCerveza()
+        {
+
+            //Clases.Bebida bebida = new Clases.Bebida("Corona",750);
+            //bebida.Beberse(125);
+            //Console.WriteLine(bebida.Cantidadml);
+
+            //Herencia.Cerveza cerveza = new Herencia.Cerveza("Corona",750);
+            //cerveza.Beberse(150);
+            //Console.WriteLine(cerveza.Cantidadml);
+            foreach (Cerveza item in new CervezaDB().Obtener())
+            {
+                Console.WriteLine( "Marca >> " + item.Marca
+                                 + "\nNombre >> " + item.NombreBebida
+                                 + "\n===============");
+            }
         }
     }
 }

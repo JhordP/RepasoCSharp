@@ -1,25 +1,20 @@
 ﻿using Practica.Update_2023;
 using System;
+using static Practica.RepasoPolimorfismo;
 using static Practica.Update_2023.Clases;
+using static Practica.Update_2023.Herencia;
 
 namespace Practica
 {
-    class Program : RepasoPolimorfismo.Menu_PDHN
+    class Program
     {
         static void Main(string[] args)
         {
             //new Main(); //Instanciar y llamar to los disparates que estan en main
             //new RepasoPolimorfismo().Menu(); //Prácticas Poliformismo
-            //new Program().golosinas(); //Programa terminado
+            //new Main().tiendaGolosinas(); //Programa terminado
+            new Main().obtenerCerveza();
 
-            //Update 2023
-            //Clases.Bebida bebida = new Clases.Bebida("Corona",750);
-            //bebida.Beberse(125);
-            //Console.WriteLine(bebida.Cantidadml);
-
-            Herencia.Cerveza cerveza = new Herencia.Cerveza("Corona",750);
-            cerveza.Beberse(150);
-            Console.WriteLine(cerveza.Cantidadml);
         }
 
 

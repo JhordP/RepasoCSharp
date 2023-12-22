@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 using static Practica.Update_2023.Clases;
+using static Practica.Update_2023.Interfaces;
 
 namespace Practica.Update_2023
 {
     public class Herencia
     {
-        public class Cerveza : Bebida, Interfaces.IBebidaAlcoholica
+        public class Cerveza : Bebida, IBebidaAlcoholica
         {
-            string nombre = "Cerveza";
-            int cant = 850;
+            //string nombre = "Cerveza";
+            //int cant = 850;
+            public int Alcohol {  get; set; }
+            public string Marca { get; set; }
 
             public Cerveza(string nombre, int cant) : base(nombre, cant) //Toma los parametros enviados por el hijo al ser instanciada
             {
@@ -21,7 +24,7 @@ namespace Practica.Update_2023
                 //Tambien se pueden colocar parametros por defectos, pero deben estar de ultimo
             }
 
-            public int Alcohol { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+            // int Alcohol { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
             public void MaxRecomendado()
             {
@@ -31,14 +34,14 @@ namespace Practica.Update_2023
 
         public class Vino : Bebida, Interfaces.IBebidaAlcoholica
         {
-            string nombre = "Cerveza";
+            string nombre = "Vino";
             int cant = 850;
 
-            public Cerveza(string nombre, int cant) : base(nombre, cant) //Toma los parametros enviados por el hijo al ser instanciada
+            public Vino(string nombre, int cant) : base(nombre, cant) //Toma los parametros enviados por el hijo al ser instanciada
             {
             }
 
-            public Cerveza(int cant, string nombre = "Corona") : base(nombre, cant)
+            public Vino(int cant, string nombre = "La fuerza") : base(nombre, cant)
             {
                 //Tambien se pueden colocar parametros por defectos, pero deben estar de ultimo
             }

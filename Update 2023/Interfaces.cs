@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Practica.Update_2023
 {
-    internal class Interfaces
+    public class Interfaces
     {
+        public interface IBebidaAlcoholica
+        {
+            public int Alcohol { get; set; }
+            public void MaxRecomendado();
+        }
     }
 }

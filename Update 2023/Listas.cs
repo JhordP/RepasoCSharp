@@ -15,7 +15,6 @@ namespace Practica.Update_2023
             ints.Add(2);
             ints.Add(3);
             ints.Remove(1); //Elimina el 1
-
         }
     }
 }

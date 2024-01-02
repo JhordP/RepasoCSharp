@@ -13,10 +13,12 @@ namespace Practica
             //new Main(); //Instanciar y llamar to los disparates que estan en main
             //new RepasoPolimorfismo().Menu(); //Prácticas Poliformismo
             //new Main().tiendaGolosinas(); //Programa terminado
-            var cerv =  new Cerveza("Brahma", 3);
-            cerv.Cantidadml = 400;
-            cerv.Marca = "CND";
-            new Main().agregarCerveza(cerv);
+            //var cerv =  new Cerveza("Brahma", 3);
+            //cerv.Cantidadml = 400;
+            //cerv.Marca = "CND";
+            //new Main().agregarCerveza(cerv);
+
+            Console.WriteLine("Hi");
 
         }
 

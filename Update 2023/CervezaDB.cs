@@ -14,7 +14,7 @@ namespace Practica.Update_2023
         public List<Cerveza> Obtener()
         {
             List<Cerveza> cervezas = new List<Cerveza>();
-            string query = "SELECT nombre, marca, alcohol, cantidad FROM Cerveza;";
+            string query = "SELECT * cantidad FROM Cerveza;";
 
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
@@ -51,6 +51,38 @@ namespace Practica.Update_2023
             sqlCommand.Parameters.AddWithValue("@marca", cerveza.Marca);
             sqlCommand.Parameters.AddWithValue("@alcohol", cerveza.Alcohol);
             sqlCommand.Parameters.AddWithValue("@cantidad", cerveza.Cantidadml);
+            conn.Open();
+            sqlCommand.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void Editar(Cerveza cerveza)
+        {
+            string query = "UPDATE Cerveza" +
+                           "SET nombre = @nombre, marca = @marca, alcohol = @alcohol, cantidad = @cantidad)" +
+                           "WHERE id = @id ";
+
+            SqlConnection conn = new SqlConnection(connString);
+
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            sqlCommand.Parameters.AddWithValue("@nombre", cerveza.NombreBebida);
+            sqlCommand.Parameters.AddWithValue("@marca", cerveza.Marca);
+            sqlCommand.Parameters.AddWithValue("@alcohol", cerveza.Alcohol);
+            sqlCommand.Parameters.AddWithValue("@cantidad", cerveza.Cantidadml);
+            sqlCommand.Parameters.AddWithValue("@id", new Random().Next(5, 25));
+            conn.Open();
+            sqlCommand.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void Eliminar(Cerveza cerveza)
+        {
+            string query = "DELETE FROM Cerveza WHERE id = @id";
+
+            SqlConnection conn = new SqlConnection(connString);
+
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            sqlCommand.Parameters.AddWithValue("@id", new Random().Next(5, 25));
             conn.Open();
             sqlCommand.ExecuteNonQuery();
             conn.Close();

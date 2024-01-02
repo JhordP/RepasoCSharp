@@ -228,5 +228,11 @@ namespace Practica
                                  + "\n===============");
             }
         }
+        
+        public void agregarCerveza(Cerveza item)
+        {
+            new CervezaDB().Agregar(item);
+            obtenerCerveza();
+        }
     }
 }

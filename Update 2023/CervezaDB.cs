@@ -37,5 +37,23 @@ namespace Practica.Update_2023
 
             return cervezas;
         }
+
+        public void Agregar(Cerveza cerveza)
+        {
+            string query = "INSERT INTO Cerveza(id, nombre, marca, alcohol, cantidad)" +
+                           "VALUES(@id, @nombre, @marca, @alcohol, @cantidad) ";
+
+            SqlConnection conn = new SqlConnection(connString);
+            
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            sqlCommand.Parameters.AddWithValue("@id", new Random().Next(5,25));
+            sqlCommand.Parameters.AddWithValue("@nombre", cerveza.NombreBebida);
+            sqlCommand.Parameters.AddWithValue("@marca", cerveza.Marca);
+            sqlCommand.Parameters.AddWithValue("@alcohol", cerveza.Alcohol);
+            sqlCommand.Parameters.AddWithValue("@cantidad", cerveza.Cantidadml);
+            conn.Open();
+            sqlCommand.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

@@ -234,5 +234,17 @@ namespace Practica
             new CervezaDB().Agregar(item);
             obtenerCerveza();
         }
+
+        public void editarCerveza(Cerveza item)
+        {
+            new CervezaDB().Editar(item);
+            obtenerCerveza();
+        }
+
+        public void eliminarCerveza(Cerveza item)
+        {
+            new CervezaDB().Eliminar(item);
+            obtenerCerveza();
+        }
     }
 }

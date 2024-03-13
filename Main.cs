@@ -1,7 +1,9 @@
 ﻿using Practica.Update_2023;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using static Practica.Update_2023.Herencia;
 
 namespace Practica
@@ -245,6 +247,12 @@ namespace Practica
         {
             new CervezaDB().Eliminar(item);
             obtenerCerveza();
+        }
+
+        public async Task webservice_GET ()
+        {
+            var get = new HTTP_GET();
+            await get.getFromWebService();
         }
     }
 }
